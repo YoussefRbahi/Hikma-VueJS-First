@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header></Header>
-    <Main></Main>
+    <!-- <Home></Home> -->
+    <University></University>
     <RouterView />
     <Footer></Footer>
   </div>
@@ -10,8 +11,9 @@
 <script setup>
 import Header from './components/Header.vue'
 import { RouterView } from 'vue-router'
-import Main from './components/Main.vue'
+import Home from './components/Home.vue'
+import University from './components/University.vue'
 import Footer from './components/Footer.vue'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css"></style>
