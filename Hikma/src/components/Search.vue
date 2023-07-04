@@ -64,12 +64,12 @@
         <div
           v-for="university in universityIds"
           :key="university"
-          :set="(uni = universities[university - 1].attributes)"
+          :set="(uni = getUniversityById(university))"
           class="p-5 grid gap-4 h-full text-center justify-center"
         >
           <img
-            v-if="uni.Image.data"
-            :src="strapiLink + uni.Image.data.attributes.formats.large.url"
+            v-if="uni.attributes.Image.data"
+            :src="uniImg(uni)"
             alt=""
             class="university-image rounded-3xl mx-auto aspect-square"
           />
@@ -80,10 +80,15 @@
             class="university-image rounded-3xl mx-auto aspect-square"
           />
 
-          <h4 class="text-2xl font-bold">{{ uni.title }}</h4>
+          <h4 class="text-2xl font-bold">{{ uni.attributes.title }}</h4>
 
-          <div class="text-lg rounded bg-white text-hikma-primary self-end max-w-sm py-1">
-            <span class="">City: </span><span class="font-bold">{{ uni.City }}</span>
+          <div
+            v-if="uni.attributes.City"
+            class="block w-52 text-lg rounded bg-white justify-self-center justify-items-center text-hikma-primary self-end py-1/2 font-mono"
+          >
+            <p>
+              <span class="">City: </span><span class="font-bold">{{ uni.attributes.City }}</span>
+            </p>
           </div>
         </div>
       </div>
@@ -152,6 +157,12 @@ export default {
     }
   },
   methods: {
+    uniImg(uni) {
+      return this.strapiLink + uni.attributes.Image.data.attributes.url
+    },
+    getUniversityById(id) {
+      return this.universities.find((university) => university.id === id)
+    },
     onDegreeTypeChange() {
       this.selectedLanguage = ''
       this.selectedProgram = ''
@@ -214,6 +225,6 @@ export default {
 .university-image {
   width: 200px; /* Adjust the desired width */
   height: 200px; /* Adjust the desired height */
-  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  object-fit: contain; /* Maintain aspect ratio and cover the entire container */
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <!-- <Home></Home> -->
+    <Home></Home>
     <University></University>
     <RouterView />
     <Footer></Footer>
