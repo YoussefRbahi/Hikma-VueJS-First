@@ -1,8 +1,9 @@
 <template>
   <div>
     <Header></Header>
-    <Home></Home>
-    <!-- <University></University> -->
+    <!-- <Home></Home> -->
+    <!-- <Universities></Universities> -->
+    <!-- <UniversityPage></UniversityPage> -->
     <RouterView />
     <Footer></Footer>
   </div>
@@ -12,8 +13,12 @@
 import Header from './components/Header.vue'
 import { RouterView } from 'vue-router'
 import Home from './components/Home.vue'
-import University from './components/University.vue'
+// import UniversityPage from './components/UniversityPage.vue'
 import Footer from './components/Footer.vue'
+// import Universities from './components/Universities.vue'
+</script>
+<script>
+export default ()
 </script>
 
 <style lang="css"></style>
