@@ -31,7 +31,7 @@
         </div>
 
         <!-- Navigation Menu -->
-        <ul class="hidden md:flex items-center space-x-4">
+        <ul class="hidden md:flex items-center gap-x-4">
           <li>
             <a href="#" class="text-lg text-gray-800 hover:text-hikma-primary">Home</a>
           </li>

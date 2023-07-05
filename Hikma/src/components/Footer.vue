@@ -2,7 +2,7 @@
   <footer class="bg-gray-800 text-white py-8 px-12 lg:px-24">
     <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between p-5">
       <div class="mt-4 lg:mt-0">
-        <ul class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
+        <ul class="flex flex-col lg:flex-row gap-y-2 lg:gap-y-0 lg:gap-x-4">
           <li><a href="#" class="hover:text-blue-500">Home</a></li>
           <li><a href="#" class="hover:text-blue-500">Universities</a></li>
           <li><a href="#" class="hover:text-blue-500">Programs</a></li>
@@ -14,7 +14,7 @@
         <p>Mikel, Yenibosna, Istanbul</p>
       </div>
       <div class="mt-4 lg:mt-0">
-        <ul class="flex space-x-4">
+        <ul class="flex gap-x-4">
           <li>
             <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
           </li>

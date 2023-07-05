@@ -10,7 +10,7 @@
             sapien aliquet, nec congue nulla pellentesque. Aenean vel libero nec ex tempus
             ullamcorper non id lectus.
           </p>
-          <div class="space-x-4">
+          <div class="gap-x-4">
             <a
               href="#"
               class="inline-block px-6 py-3 text-white bg-hikma-primary rounded-md hover:bg-hikma-secondary"

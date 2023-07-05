@@ -4,7 +4,7 @@
       <h2 class="text-4xl font-bold text-center mb-4 text-white">Find Your University</h2>
       <div class="flex justify-center items-center">
         <div
-          class="flex flex-col mb-4 rounded-lg gap-x-2 gap-y-4 md:flex-row md:space-y-0 md:space-x-4 p-5 md:rounded-full lg:rounded-full"
+          class="flex flex-col mb-4 rounded-lg gap-x-2 gap-y-4 md:flex-row md:gap-y-0 md:gap-x-4 p-5 md:rounded-full lg:rounded-full"
         >
           <select
             class="px-2 py-1 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-52 md:text-center"
@@ -62,7 +62,7 @@
         class="mx-auto text-center grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-white"
       >
         <div
-          v-for="university in universityIds"
+          v-for="university in universityIds.slice(0, uniNumber)"
           :key="university"
           :set="(uni = getUniversityById(university))"
           class="p-5 grid gap-4 h-full text-center justify-center"
@@ -77,20 +77,28 @@
             v-else
             :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
             alt=""
-            class="university-image rounded-3xl mx-auto aspect-square"
+            class="not-found-image rounded-3xl mx-auto aspect-square"
           />
 
           <h4 class="text-2xl font-bold">{{ uni.attributes.title }}</h4>
 
           <div
             v-if="uni.attributes.City"
-            class="block w-52 text-lg rounded bg-white justify-self-center justify-items-center text-hikma-primary self-end py-1/2 font-mono"
+            class="block w-52 text-lg rounded-xl bg-white justify-self-center justify-items-center text-hikma-primary self-end py-1/2 font-mono"
           >
             <p>
               <span class="">City: </span><span class="font-bold">{{ uni.attributes.City }}</span>
             </p>
           </div>
         </div>
+      </div>
+      <div v-if="universityIds.length > uniNumber" class="flex justify-center">
+        <button
+          class="mt-2 mx-2 px-2 py-3 text-xl font-bold rounded-xl w-full w-72 md:w-60 lg:w-48 text-center bg-hikma-primary text-white"
+          @click="onSearch"
+        >
+          Show All
+        </button>
       </div>
     </div>
   </div>
@@ -101,6 +109,7 @@ export default {
   data() {
     return {
       strapiLink: 'http://localhost:1337',
+      uniNumber: 4,
       selectedDegreeType: '',
       selectedLanguage: '',
       selectedProgram: '',
@@ -226,5 +235,10 @@ export default {
   width: 200px; /* Adjust the desired width */
   height: 200px; /* Adjust the desired height */
   object-fit: contain; /* Maintain aspect ratio and cover the entire container */
+}
+.not-found-image {
+  width: 200px; /* Adjust the desired width */
+  height: 200px; /* Adjust the desired height */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
 </style>

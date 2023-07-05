@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="grid md:mx-40">
-      <div class="grid md:grid-flow-col my-12 mx-12 gap-4 justify-items-between">
+    <div class="grid my-20 lg:mx-40 border bg-hikma-secondary rounded-3xl">
+      <div class="grid lg:grid-flow-col my-12 mx-12 gap-4 p-4 bg-white rounded-3xl">
         <div class="flex items-center gap-4">
           <img
             :src="strapiLink + uni.data.attributes.Image.data.attributes.url"
@@ -10,27 +10,46 @@
           />
           <h1 class="inline-block text-4xl">{{ uni.data.attributes.title }}</h1>
         </div>
-        <div class="grid grid-cols-2 gap-4">
+        <div
+          class="grid grid-cols-2 gap-4 outline outline-2 rounded-3xl p-4 px-12 bg-hikma-secondary text-white font-mono font-bold"
+        >
           <div>
-            <h1>Location</h1>
+            <p>Location</p>
             <p>{{ uni.data.attributes.City }}</p>
           </div>
           <div>
-            <h1>Established</h1>
+            <p>Established</p>
             <p>{{ uni.data.attributes.Established }}</p>
           </div>
           <div>
-            <h1>Type</h1>
+            <p>Type</p>
             <p>{{ uni.data.attributes.Type }}</p>
           </div>
           <div>
-            <h1>Admission</h1>
+            <p>Admission</p>
             <p>{{ uni.data.attributes.Admission }}</p>
           </div>
         </div>
       </div>
-      <div class="m-12 text-justify">
-        <p>{{ uni.data.attributes.Description }}</p>
+      <div class="grid lg:grid-cols-2 text-white justify-between mx-12 gap-4 mb-12">
+        <div class="text-justify">
+          <h2 class="text-3xl mb-4">About</h2>
+          <p class="pe-8">{{ uni.data.attributes.Description }}</p>
+        </div>
+        <div class="">
+          <h2 class="text-3xl mb-4">Programs</h2>
+          <div class="grid gap-4 p-8 bg-white rounded-3xl text-black text-lg text-justify">
+            <div
+              v-for="program in uni.data.attributes.Program"
+              :key="program"
+              class="grid grid-cols-4 gap-2 bg-hikma-secondary rounded-lg text-white py-2 px-4"
+            >
+              <h3 class="col-span-2">{{ program.Name }}</h3>
+              <p class="col-span-1 text-center">{{ program.Language }}</p>
+              <p class="col-span-1 text-center">{{ program.Type }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -47,9 +66,9 @@ export default {
           attributes: {
             title: 'Karakoy University',
             Description:
-              'Bold**JOIJEF; oiejqwf;o iejf; iqwejf;o iqejf lorem impsum, What is Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using , making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Where can I get some?There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+              'Pretty cool university. Why end might ask civil again spoil. She dinner she our horses depend. Remember at children by reserved to vicinity. In affronting unreserved delightful simplicity ye. Law own advantage furniture continual sweetness bed agreeable perpetual. Oh song well four only head busy it. Afford son she had lively living. Tastes lovers myself too formal season our valley boy. Lived it their their walls might to by young. Remain valley who mrs uneasy remove wooded him you. Her questions favourite him concealed. We to wife face took he. The taste begin early old why since dried can first. Prepared as or humoured formerly. Evil mrs true get post. Express village evening prudent my as ye hundred forming. Thoughts she why not directly reserved packages you. Winter an silent favour of am tended mutual.',
             createdAt: '2023-06-30T14:03:41.026Z',
-            updatedAt: '2023-07-04T07:58:13.054Z',
+            updatedAt: '2023-07-05T15:07:05.962Z',
             publishedAt: '2023-06-30T14:03:43.714Z',
             locale: 'en',
             City: 'Istanbul',
@@ -75,6 +94,34 @@ export default {
                 id: 6,
                 __component: 'program.program',
                 Name: 'Medecine',
+                Language: 'English',
+                Type: 'Bachelor'
+              },
+              {
+                id: 30,
+                __component: 'program.program',
+                Name: 'Geography',
+                Language: 'English',
+                Type: 'Master'
+              },
+              {
+                id: 31,
+                __component: 'program.program',
+                Name: 'History',
+                Language: 'Turkish',
+                Type: 'Bachelor'
+              },
+              {
+                id: 32,
+                __component: 'program.program',
+                Name: 'Sports Science',
+                Language: 'English',
+                Type: 'Associate'
+              },
+              {
+                id: 33,
+                __component: 'program.program',
+                Name: 'Pharmacy',
                 Language: 'English',
                 Type: 'Bachelor'
               }
@@ -110,7 +157,7 @@ export default {
                   provider: 'local',
                   provider_metadata: null,
                   createdAt: '2023-07-04T07:11:05.555Z',
-                  updatedAt: '2023-07-04T07:11:05.555Z'
+                  updatedAt: '2023-07-04T16:45:02.136Z'
                 }
               }
             },

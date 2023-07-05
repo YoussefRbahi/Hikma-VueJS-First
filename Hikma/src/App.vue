@@ -2,7 +2,7 @@
   <div>
     <Header></Header>
     <Home></Home>
-    <University></University>
+    <!-- <University></University> -->
     <RouterView />
     <Footer></Footer>
   </div>
