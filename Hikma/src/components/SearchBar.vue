@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-hikma-secondary mt-8 py-10 lg:px-24">
+  <div class="bg-hikma-secondary py-10 lg:px-24">
     <div class="container mx-auto">
       <h2 class="text-4xl font-bold text-center mb-4 text-white">Find Your University</h2>
       <div class="flex justify-center items-center">
@@ -65,31 +65,35 @@
           v-for="university in universityIds.slice(0, maxResults)"
           :key="university"
           :set="(uni = getUniversityById(university))"
-          class="p-5 grid gap-4 h-full text-center justify-center"
         >
-          <img
-            v-if="uni.attributes.Image.data"
-            :src="uniImg(uni)"
-            alt=""
-            class="university-image rounded-3xl mx-auto aspect-square"
-          />
-          <img
-            v-else
-            :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
-            alt=""
-            class="not-found-image rounded-3xl mx-auto aspect-square"
-          />
+          <a :href="'/universities/' + university">
+            <div class="p-5 grid gap-4 h-full text-center justify-center">
+              <img
+                v-if="uni.attributes.Image.data"
+                :src="uniImg(uni)"
+                alt=""
+                class="university-image rounded-3xl mx-auto aspect-square"
+              />
+              <img
+                v-else
+                :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
+                alt=""
+                class="not-found-image rounded-3xl mx-auto aspect-square"
+              />
 
-          <h4 class="text-2xl font-bold">{{ uni.attributes.title }}</h4>
+              <h4 class="text-2xl font-bold">{{ uni.attributes.title }}</h4>
 
-          <div
-            v-if="uni.attributes.City"
-            class="block w-52 text-lg rounded-xl bg-white justify-self-center justify-items-center text-hikma-primary self-end py-1/2 font-mono"
-          >
-            <p>
-              <span class="">City: </span><span class="font-bold">{{ uni.attributes.City }}</span>
-            </p>
-          </div>
+              <div
+                v-if="uni.attributes.City"
+                class="block w-52 text-lg rounded-xl bg-white justify-self-center justify-items-center text-hikma-primary self-end py-1/2 font-mono"
+              >
+                <p>
+                  <span class="">City: </span
+                  ><span class="font-bold">{{ uni.attributes.City }}</span>
+                </p>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
       <div v-if="universityIds.length > maxResults" class="flex justify-center">

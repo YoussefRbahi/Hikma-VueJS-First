@@ -7,21 +7,14 @@
             v-if="uni.attributes.Image.data"
             :src="strapiLink + uni.attributes.Image.data.attributes.url"
             alt=""
-            class="w-24 h-24 md:w-36 md:h-36 aspect-square inline-block object-contain"
+            class="w-24 h-24 md:w-36 md:h-36 aspect-square inline-block object-contain rounded"
           />
           <img
             v-else
             :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
             alt=""
-            class="w-24 h-24 md:w-36 md:h-36 aspect-square inline-block object-cover"
+            class="w-24 h-24 md:w-36 md:h-36 aspect-square in line-block object-cover"
           />
-
-          <!-- <img
-            v-else
-            :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
-            alt=""
-            class="not-found-image rounded-3xl mx-auto aspect-square"
-          /> -->
 
           <h1 class="inline-block text-4xl">{{ uni.attributes.title }}</h1>
         </div>
@@ -51,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="grid lg:grid-cols-2 text-white justify-between mx-12 gap-4 mb-12">
+      <div class="grid lg:grid-cols-2 text-white mx-12 gap-4 mb-12">
         <div class="text-justify">
           <h2 class="text-3xl mb-4">About</h2>
           <p class="pe-8">{{ uni.attributes.Description }}</p>
@@ -65,8 +58,8 @@
               class="grid grid-cols-4 gap-2 bg-hikma-secondary rounded-lg text-white py-2 px-4"
             >
               <h3 class="col-span-2">{{ program.Name }}</h3>
-              <p class="col-span-1 text-center">{{ program.Language }}</p>
-              <p class="col-span-1 text-center">{{ program.Type }}</p>
+              <p class="col-span-1">{{ program.Language }}</p>
+              <p class="col-span-1">{{ program.Type }}</p>
             </div>
           </div>
         </div>
