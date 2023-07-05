@@ -17,8 +17,5 @@ import Home from './components/Home.vue'
 import Footer from './components/Footer.vue'
 // import Universities from './components/Universities.vue'
 </script>
-<script>
-export default ()
-</script>
 
 <style lang="css"></style>

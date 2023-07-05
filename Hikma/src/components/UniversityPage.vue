@@ -1,0 +1,95 @@
+<template>
+  <div>
+    <div class="grid my-20 lg:mx-40 border bg-hikma-secondary rounded-3xl">
+      <div class="grid lg:grid-flow-col my-12 mx-12 gap-4 p-4 bg-white rounded-3xl">
+        <div class="flex items-center gap-4">
+          <img
+            v-if="uni.attributes.Image.data"
+            :src="strapiLink + uni.attributes.Image.data.attributes.url"
+            alt=""
+            class="w-24 h-24 md:w-36 md:h-36 aspect-square inline-block object-contain"
+          />
+          <img
+            v-else
+            :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
+            alt=""
+            class="w-24 h-24 md:w-36 md:h-36 aspect-square inline-block object-cover"
+          />
+
+          <!-- <img
+            v-else
+            :src="strapiLink + '/uploads/large_image_not_found_scaled_1150x647_ada8db2920.png'"
+            alt=""
+            class="not-found-image rounded-3xl mx-auto aspect-square"
+          /> -->
+
+          <h1 class="inline-block text-4xl">{{ uni.attributes.title }}</h1>
+        </div>
+        <div
+          class="grid grid-cols-2 gap-4 outline outline-2 rounded-3xl p-4 px-12 bg-hikma-secondary text-center text-white font-mono font-bold"
+        >
+          <div>
+            <p>Location</p>
+            <p>{{ uni.attributes.City }}</p>
+          </div>
+          <div>
+            <p>Established</p>
+            <p>{{ uni.attributes.Established }}</p>
+          </div>
+          <div>
+            <p>Type</p>
+            <p>{{ uni.attributes.Type }}</p>
+          </div>
+          <div>
+            <p>Admission</p>
+            <p v-if="uni.attributes.Admission == 'Open'" class="text-green-400">
+              {{ uni.attributes.Admission }}
+            </p>
+            <p v-if="uni.attributes.Admission == 'Closed'" class="text-red-400">
+              {{ uni.attributes.Admission }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-2 text-white justify-between mx-12 gap-4 mb-12">
+        <div class="text-justify">
+          <h2 class="text-3xl mb-4">About</h2>
+          <p class="pe-8">{{ uni.attributes.Description }}</p>
+        </div>
+        <div class="">
+          <h2 class="text-3xl mb-4">Programs</h2>
+          <div class="grid gap-4 p-8 bg-white rounded-3xl text-black text-lg text-justify">
+            <div
+              v-for="program in uni.attributes.Program"
+              :key="program"
+              class="grid grid-cols-4 gap-2 bg-hikma-secondary rounded-lg text-white py-2 px-4"
+            >
+              <h3 class="col-span-2">{{ program.Name }}</h3>
+              <p class="col-span-1 text-center">{{ program.Language }}</p>
+              <p class="col-span-1 text-center">{{ program.Type }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      strapiLink: 'http://localhost:1337',
+      uni: {}
+    }
+  },
+  created() {
+    const selectedUniversity = this.$store.getters.getUniversities.find(
+      (university) => university.id == this.$route.params.id
+    )
+    this.uni = selectedUniversity
+  }
+}
+</script>
+
+<style lang="scss" scoped></style>

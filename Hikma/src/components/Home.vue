@@ -6,7 +6,7 @@
     <Services></Services>
   </section>
   <section>
-    <Search></Search>
+    <SearchBar maxResults="4"></SearchBar>
   </section>
   <section>
     <Tower></Tower>
@@ -18,7 +18,7 @@
 
 <script setup>
 import Hero from './Hero.vue'
-import Search from './Search.vue'
+import SearchBar from './SearchBar.vue'
 import Stats from './Stats.vue'
 import Services from './Services.vue'
 import Tower from './Tower.vue'
@@ -27,6 +27,9 @@ import Tower from './Tower.vue'
 export default {
   data() {
     return {}
+  },
+  created() {
+    this.$store.commit('setFilteredUniversities', [])
   }
 }
 </script>

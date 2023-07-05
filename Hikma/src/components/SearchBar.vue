@@ -62,7 +62,7 @@
         class="mx-auto text-center grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-white"
       >
         <div
-          v-for="university in universityIds.slice(0, uniNumber)"
+          v-for="university in universityIds.slice(0, maxResults)"
           :key="university"
           :set="(uni = getUniversityById(university))"
           class="p-5 grid gap-4 h-full text-center justify-center"
@@ -92,30 +92,38 @@
           </div>
         </div>
       </div>
-      <div v-if="universityIds.length > uniNumber" class="flex justify-center">
-        <button
+      <div v-if="universityIds.length > maxResults" class="flex justify-center">
+        <RouterLink
+          to="/universities"
           class="mt-2 mx-2 px-2 py-3 text-xl font-bold rounded-xl w-full w-72 md:w-60 lg:w-48 text-center bg-hikma-primary text-white"
-          @click="onSearch"
         >
           Show All
-        </button>
+        </RouterLink>
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
 <script>
 export default {
   data() {
     return {
       strapiLink: 'http://localhost:1337',
-      uniNumber: 4,
       selectedDegreeType: '',
       selectedLanguage: '',
       selectedProgram: '',
       programs: [],
       universities: [],
       universityIds: []
+    }
+  },
+  props: {
+    maxResults: {
+      type: Number,
+      default: 1024
     }
   },
   computed: {
@@ -137,7 +145,6 @@ export default {
             languages[program.language]++
           }
         })
-
       return Object.keys(languages).map((language) => ({
         value: language,
         label: `${language} (${languages[language]} programs)`
@@ -158,7 +165,6 @@ export default {
             programs[program.name]++
           }
         })
-
       return Object.keys(programs).map((program) => ({
         value: program,
         label: `${program} (${programs[program]} universities)`
@@ -189,7 +195,8 @@ export default {
         this.selectedLanguage,
         this.selectedProgram
       )
-      console.log(this.universityIds)
+      this.$store.commit('setFilteredUniversities', this.universityIds)
+      console.log(this.$store.getters.getFilteredUniversities)
     },
     getUniversityIds(selectedDegreeType, selectedLanguage, selectedProgram) {
       const filteredPrograms = this.programs.filter(
@@ -205,11 +212,9 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.universities = data.data
-
           this.universities.forEach((university) => {
             const universityId = university.id
             const programsData = university.attributes.Program
-
             programsData.forEach((program) => {
               const programObject = {
                 name: program.Name,
@@ -226,7 +231,9 @@ export default {
   },
   mounted() {
     this.fetchData()
-  }
+    this.universityIds = this.$store.getters.getFilteredUniversities
+  },
+  components: { RouterLink }
 }
 </script>
 

@@ -33,10 +33,15 @@
         <!-- Navigation Menu -->
         <ul class="hidden md:flex items-center gap-x-4">
           <li>
-            <a href="#" class="text-lg text-gray-800 hover:text-hikma-primary">Home</a>
+            <RouterLink to="/" class="text-lg text-gray-800 hover:text-hikma-primary"
+              >Home</RouterLink
+            >
           </li>
+
           <li>
-            <a href="#" class="text-lg text-gray-800 hover:text-hikma-primary">Universities</a>
+            <RouterLink to="/universities" class="text-lg text-gray-800 hover:text-hikma-primary"
+              >Universities</RouterLink
+            >
           </li>
           <li>
             <a href="#" class="text-lg text-gray-800 hover:text-hikma-primary">Services</a>
@@ -59,7 +64,9 @@
               <a href="#" class="block text-gray-800 hover:text-hikma-primary">Home</a>
             </li>
             <li>
-              <a href="#" class="block text-gray-800 hover:text-hikma-primary">Universities</a>
+              <RouterLink to="/universities/" class="block text-gray-800 hover:text-hikma-primary"
+                >Universities</RouterLink
+              >
             </li>
             <li>
               <a href="#" class="block text-gray-800 hover:text-hikma-primary">Services</a>
@@ -78,6 +85,7 @@
 </template>
 
 <script>
+import { RouterLink } from 'vue-router'
 export default {
   data() {
     return {
@@ -88,7 +96,8 @@ export default {
     toggleMobileMenu() {
       this.mobileMenuOpen = !this.mobileMenuOpen
     }
-  }
+  },
+  components: { RouterLink }
 }
 </script>
 
