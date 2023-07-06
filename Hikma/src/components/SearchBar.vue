@@ -120,7 +120,6 @@ export default {
       selectedLanguage: '',
       selectedProgram: '',
       programs: [],
-      universities: [],
       universityIds: []
     }
   },
@@ -201,6 +200,7 @@ export default {
       )
       this.$store.commit('setFilteredUniversities', this.universityIds)
       console.log(this.$store.getters.getFilteredUniversities)
+      console.log(this.$store.getters.getPrograms)
     },
     getUniversityIds(selectedDegreeType, selectedLanguage, selectedProgram) {
       const filteredPrograms = this.programs.filter(
@@ -210,32 +210,37 @@ export default {
           program.name === selectedProgram
       )
       return filteredPrograms.map((program) => program.universityId)
-    },
-    fetchData() {
-      fetch('http://localhost:1337/api/universities?populate=*')
-        .then((response) => response.json())
-        .then((data) => {
-          this.universities = data.data
-          this.universities.forEach((university) => {
-            const universityId = university.id
-            const programsData = university.attributes.Program
-            programsData.forEach((program) => {
-              const programObject = {
-                name: program.Name,
-                degreeType: program.Type,
-                language: program.Language,
-                universityId: universityId
-              }
-              this.programs.push(programObject)
-            })
-          })
-        })
-        .catch((error) => console.error(error))
     }
+    // fetchData() {
+    //   fetch('http://localhost:1337/api/universities?populate=*')
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       this.universities = data.data
+    //       this.universities.forEach((university) => {
+    //         const universityId = university.id
+    //         const programsData = university.attributes.Program
+    //         programsData.forEach((program) => {
+    //           const programObject = {
+    //             name: program.Name,
+    //             degreeType: program.Type,
+    //             language: program.Language,
+    //             universityId: universityId
+    //           }
+    //           this.programs.push(programObject)
+    //         })
+    //       })
+    //     })
+    //     .catch((error) => console.error(error))
+    // }
   },
   mounted() {
-    this.fetchData()
+    // this.fetchData()
     this.universityIds = this.$store.getters.getFilteredUniversities
+    this.programs = this.$store.getters.getPrograms
+    this.universities = this.$store.getters.getUniversities
+  },
+  created() {
+    console.log('haha' + this.$store.getters.getUniversities)
   },
   components: { RouterLink }
 }
