@@ -4,7 +4,7 @@
       <div class="container mx-auto flex flex-col lg:flex-row items-center">
         <!-- Content -->
         <div class="lg:w-1/2 lg:ml-12 mt-8 lg:mt-0">
-          <h2 class="text-4xl font-bold mb-4">Why Study in Turkey?</h2>
+          <h2 class="text-4xl font-bold mb-4">How do I start studying in Turkey?</h2>
           <p class="text-gray-700 mb-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis neque eget
             sapien aliquet, nec congue nulla pellentesque. Aenean vel libero nec ex tempus

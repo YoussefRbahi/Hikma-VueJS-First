@@ -2,7 +2,7 @@
   <section>
     <Hero></Hero>
   </section>
-  <section>
+  <section class="mb-12">
     <Services></Services>
   </section>
   <section>
@@ -14,6 +14,9 @@
   <section>
     <Stats></Stats>
   </section>
+  <section>
+    <ContactForm></ContactForm>
+  </section>
 </template>
 
 <script setup>
@@ -22,6 +25,7 @@ import SearchBar from './SearchBar.vue'
 import Stats from './Stats.vue'
 import Services from './Services.vue'
 import Tower from './Tower.vue'
+import ContactForm from './ContactForm.vue'
 </script>
 <script>
 export default {
