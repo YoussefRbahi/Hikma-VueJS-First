@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-hikma-secondary py-10 lg:px-24">
+  <div class="bg-hikma-secondary pt-20 pb-8 lg:px-24">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-4 text-white">Find Your University</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 text-white">Find Your University</h2>
       <div class="flex justify-center items-center">
         <div
           class="flex flex-col mb-4 rounded-lg gap-x-2 gap-y-4 md:flex-row md:gap-y-0 md:gap-x-4 p-5 md:rounded-full lg:rounded-full"
         >
           <select
-            class="px-2 py-1 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-52 md:text-center"
+            class="px-2 py-4 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-52 md:text-center"
             v-model="selectedDegreeType"
             @change="onDegreeTypeChange"
           >
@@ -18,7 +18,7 @@
           </select>
 
           <select
-            class="px-2 py-1 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-64 md:text-center"
+            class="px-2 py-4 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-64 md:text-center"
             v-model="selectedLanguage"
             :disabled="!selectedDegreeType"
             @change="onLanguageChange"
@@ -34,7 +34,7 @@
           </select>
 
           <select
-            class="px-2 py-1 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-64 md:text-center"
+            class="px-2 py-4 text-lg border border-gray-300 rounded-full w-full md:w-40 lg:w-64 md:text-center"
             v-model="selectedProgram"
             :disabled="!selectedLanguage"
             @change="onProgramChange"
@@ -46,7 +46,7 @@
           </select>
 
           <button
-            class="px-4 py-2 text-xl font-bold rounded-full disabled:bg-gray-400 w-full md:w-40 lg:w-48 text-center disabled:text-gray-600 disabled:cursor-not-allowed"
+            class="px-4 py-4 text-xl font-bold rounded-full disabled:bg-gray-400 w-full md:w-40 lg:w-48 text-center disabled:text-gray-600 disabled:cursor-not-allowed"
             :class="{
               'bg-hikma-primary text-white': selectedProgram,
               'bg-gray-300 text-gray-500': !selectedProgram
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div
-        class="mx-auto text-center grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-white"
+        class="mx-auto text-center grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-white mb-12"
       >
         <div
           v-for="university in universityIds.slice(0, maxResults)"
@@ -99,7 +99,7 @@
       <div v-if="universityIds.length > maxResults" class="flex justify-center">
         <RouterLink
           to="/universities"
-          class="mt-2 mx-2 px-2 py-3 text-xl font-bold rounded-xl w-full w-72 md:w-60 lg:w-48 text-center bg-hikma-primary text-white"
+          class="mt-2 mx-2 px-2 py-3 text-xl font-bold rounded-xl w-full md:w-60 lg:w-48 text-center bg-hikma-primary text-white"
         >
           Show All
         </RouterLink>
@@ -210,38 +210,37 @@ export default {
           program.name === selectedProgram
       )
       return filteredPrograms.map((program) => program.universityId)
+    },
+    fetchData() {
+      fetch('http://localhost:1337/api/universities?populate=*')
+        .then((response) => response.json())
+        .then((data) => {
+          this.universities = data.data
+          this.universities.forEach((university) => {
+            const universityId = university.id
+            const programsData = university.attributes.Program
+            programsData.forEach((program) => {
+              const programObject = {
+                name: program.Name,
+                degreeType: program.Type,
+                language: program.Language,
+                universityId: universityId
+              }
+              this.programs.push(programObject)
+            })
+          })
+        })
+        .catch((error) => console.error(error))
     }
-    // fetchData() {
-    //   fetch('http://localhost:1337/api/universities?populate=*')
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       this.universities = data.data
-    //       this.universities.forEach((university) => {
-    //         const universityId = university.id
-    //         const programsData = university.attributes.Program
-    //         programsData.forEach((program) => {
-    //           const programObject = {
-    //             name: program.Name,
-    //             degreeType: program.Type,
-    //             language: program.Language,
-    //             universityId: universityId
-    //           }
-    //           this.programs.push(programObject)
-    //         })
-    //       })
-    //     })
-    //     .catch((error) => console.error(error))
-    // }
   },
   mounted() {
-    // this.fetchData()
+    this.fetchData()
+
     this.universityIds = this.$store.getters.getFilteredUniversities
-    this.programs = this.$store.getters.getPrograms
-    this.universities = this.$store.getters.getUniversities
+    // this.programs = this.$store.getters.getPrograms
+    // this.universities = this.$store.getters.getUniversities
   },
-  created() {
-    console.log('haha' + this.$store.getters.getUniversities)
-  },
+  created() {},
   components: { RouterLink }
 }
 </script>
