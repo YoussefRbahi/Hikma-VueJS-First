@@ -58,6 +58,7 @@
           </button>
         </div>
       </div>
+
       <div
         class="mx-auto text-center grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-white mb-12"
       >
@@ -98,7 +99,7 @@
       </div>
       <div v-if="universityIds.length > maxResults" class="flex justify-center">
         <RouterLink
-          to="/universities"
+          to="/universities/results"
           class="mt-2 mx-2 px-2 py-3 text-xl font-bold rounded-xl w-full md:w-60 lg:w-48 text-center bg-hikma-primary text-white"
         >
           Show All
@@ -127,6 +128,10 @@ export default {
     maxResults: {
       type: Number,
       default: 1024
+    },
+    loadAllUniversities: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -175,6 +180,15 @@ export default {
     }
   },
   methods: {
+    loadAllUniversitiesData() {
+      // Fetch all universities and populate universityIds with their IDs
+      fetch('http://localhost:1337/api/universities?populate=*')
+        .then((response) => response.json())
+        .then((data) => {
+          this.universityIds = data.data.map((university) => university.id)
+        })
+        .catch((error) => console.error(error))
+    },
     uniImg(uni) {
       return this.strapiLink + uni.attributes.Image.data.attributes.url
     },
@@ -235,8 +249,13 @@ export default {
   },
   mounted() {
     this.fetchData()
+    if (this.loadAllUniversities) {
+      this.loadAllUniversitiesData()
+    }
+    if (!this.loadAllUniversities) {
+      this.universityIds = this.$store.getters.getFilteredUniversities
+    }
 
-    this.universityIds = this.$store.getters.getFilteredUniversities
     // this.programs = this.$store.getters.getPrograms
     // this.universities = this.$store.getters.getUniversities
   },
