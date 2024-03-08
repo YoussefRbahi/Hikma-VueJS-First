@@ -1,20 +1,26 @@
 <template>
   <div>
-    <div class="py-12 bg-[url('/src/assets/media/bg.png')] bg-contain bg-no-repeat px-12 lg:px-24">
+    <div
+      class="py-12 bg-[url('/src/assets/media/bg.png')] bg-contain bg-no-repeat px-12 lg:px-24 text-center md:text-start"
+    >
       <div class="container mx-auto flex flex-col lg:flex-row items-center">
         <!-- Content -->
         <div class="lg:w-1/2 lg:ml-12 mt-8 lg:mt-0">
-          <h2 class="text-4xl font-bold mb-4">How do I start studying in Turkey?</h2>
+          <h2 class="text-4xl font-montserratsb mb-4 text-hikma-secondary">
+            كيف تسجل للحصول على قبولك الجامعي بدون مصاريف المكتب ؟
+          </h2>
           <p class="text-gray-700 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis neque eget
-            sapien aliquet, nec congue nulla pellentesque. Aenean vel libero nec ex tempus
-            ullamcorper non id lectus.
+            هل تريد الدراسة في تركيا؟ هل تبحث عن جامعة لاستكمال رحلتك الجامعية بمصروفات مخفضة وعروض
+            حصرية؟<br />
+            مؤسسة حكمة ، متمثلة في فريقها المتميز والحائز على عدة شهادات في الاستشارات التعليمية
+            تقدم خدماتها للطلاب الراغبين في الدراسة بالخارج وتحديدا في تركيا. تعد مؤسستنا الوكيل
+            المغربي المعتمد لأكثر من 50 جامعة في تركيا، ولهذا السبب...
           </p>
           <div class="gap-x-4">
-            <a
-              href="#"
+            <RouterLink
+              to="/how-to"
               class="inline-block px-6 py-3 text-white bg-hikma-primary rounded-md hover:bg-hikma-secondary"
-              >Get Started</a
+              >اقرإ المزيد</RouterLink
             >
           </div>
         </div>

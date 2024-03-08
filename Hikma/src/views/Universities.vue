@@ -1,11 +1,11 @@
 <template>
   <div>
-    <SearchBar load-all-universities="true"></SearchBar>
+    <SearchBar></SearchBar>
   </div>
 </template>
 
 <script setup>
-import SearchBar from './SearchBar.vue'
+import SearchBar from '../components/SearchBar.vue'
 </script>
 
 <script>

@@ -1,50 +1,27 @@
 <template>
-  <div>
+  <div class="text-gray-800">
+    <TopBar></TopBar>
     <Header></Header>
-    <RouterView />
+    <div class="relative">
+      <RouterView></RouterView> <WhatsappButton class="hidden md:block"></WhatsappButton>
+    </div>
     <Footer></Footer>
   </div>
 </template>
 
 <script setup>
+import TopBar from './components/TopBar.vue'
 import Header from './components/Header.vue'
 import { RouterView } from 'vue-router'
 import Footer from './components/Footer.vue'
+import WhatsappButton from './components/WhatsappButton.vue'
 </script>
 <script>
 export default {
   data() {
     return {}
   },
-  methods: {
-    // fetchData() {
-    //   fetch('http://localhost:1337/api/universities?populate=*')
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       const universities = data.data
-    //       const programs = []
-    //       universities.forEach((university) => {
-    //         const universityId = university.id
-    //         const programsData = university.attributes.Program
-    //         programsData.forEach((program) => {
-    //           const programObject = {
-    //             name: program.Name,
-    //             degreeType: program.Type,
-    //             language: program.Language,
-    //             universityId: universityId
-    //           }
-    //           programs.push(programObject)
-    //         })
-    //       })
-    //       this.$store.commit('setUniversities', universities)
-    //       this.$store.commit('setPrograms', programs)
-    //     })
-    //     .catch((error) => console.error(error))
-    // }
-  }
-  // created() {
-  //   this.fetchData()
-  // }
+  methods: {}
 }
 </script>
 

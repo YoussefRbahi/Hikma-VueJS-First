@@ -1,0 +1,330 @@
+{
+"data": [
+{
+"id": 16,
+"attributes": {
+"title": "جامعة نيشان تاشي",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\n\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T13:43:11.005Z",
+"updatedAt": "2023-07-08T15:11:51.504Z",
+"publishedAt": "2023-07-08T13:43:14.663Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 2012,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 44,
+"__component": "program.program",
+"Name": "الحجامة",
+"Language": "التركية",
+"Type": "ماجستير",
+"Price": "$42069"
+},
+{
+"id": 45,
+"__component": "program.program",
+"Name": "الرقية الشرعية",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$999999"
+}
+],
+"Image": {
+"data": {
+"id": 8,
+"attributes": {
+"name": "Nişantaşı-University-logo.png",
+"alternativeText": null,
+"caption": null,
+"width": 200,
+"height": 200,
+"formats": {
+"thumbnail": {
+"name": "thumbnail_Nişantaşı-University-logo.png",
+"hash": "thumbnail_Nisantasi_University_logo_5714b74f5d",
+"ext": ".png",
+"mime": "image/png",
+"path": null,
+"width": 156,
+"height": 156,
+"size": 11.09,
+"url": "/uploads/thumbnail_Nisantasi_University_logo_5714b74f5d.png"
+}
+},
+"hash": "Nisantasi_University_logo_5714b74f5d",
+"ext": ".png",
+"mime": "image/png",
+"size": 2.92,
+"url": "/uploads/Nisantasi_University_logo_5714b74f5d.png",
+"previewUrl": null,
+"provider": "local",
+"provider_metadata": null,
+"createdAt": "2023-07-08T13:42:28.118Z",
+"updatedAt": "2023-07-08T13:42:28.118Z"
+}
+}
+},
+"localizations": {
+"data": []
+}
+}
+},
+{
+"id": 17,
+"attributes": {
+"title": "جامعة بهتشه شهير",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T13:43:21.519Z",
+"updatedAt": "2023-07-08T14:36:04.919Z",
+"publishedAt": "2023-07-08T13:54:21.708Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 1998,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 34,
+"__component": "program.program",
+"Name": "الإعلام الجديد",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+},
+{
+"id": 35,
+"__component": "program.program",
+"Name": "هندسة الكومبيوتر",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+}
+],
+"Image": {
+"data": {
+"id": 9,
+"attributes": {
+"name": "Bahcesehir-University-logo.png",
+"alternativeText": null,
+"caption": null,
+"width": 200,
+"height": 200,
+"formats": {
+"thumbnail": {
+"name": "thumbnail_Bahcesehir-University-logo.png",
+"hash": "thumbnail_Bahcesehir_University_logo_5e5e9edefb",
+"ext": ".png",
+"mime": "image/png",
+"path": null,
+"width": 156,
+"height": 156,
+"size": 13.71,
+"url": "/uploads/thumbnail_Bahcesehir_University_logo_5e5e9edefb.png"
+}
+},
+"hash": "Bahcesehir_University_logo_5e5e9edefb",
+"ext": ".png",
+"mime": "image/png",
+"size": 3.61,
+"url": "/uploads/Bahcesehir_University_logo_5e5e9edefb.png",
+"previewUrl": null,
+"provider": "local",
+"provider_metadata": null,
+"createdAt": "2023-07-08T13:44:16.296Z",
+"updatedAt": "2023-07-08T13:44:16.296Z"
+}
+}
+},
+"localizations": {
+"data": []
+}
+}
+},
+{
+"id": 18,
+"attributes": {
+"title": "جامعة كاديكوي",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T15:03:22.412Z",
+"updatedAt": "2023-07-08T15:03:48.846Z",
+"publishedAt": "2023-07-08T15:10:38.073Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 1998,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 36,
+"__component": "program.program",
+"Name": "الإعلام الجديد",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+},
+{
+"id": 37,
+"__component": "program.program",
+"Name": "هندسة الكومبيوتر",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+}
+],
+"Image": {
+"data": null
+},
+"localizations": {
+"data": []
+}
+}
+},
+{
+"id": 19,
+"attributes": {
+"title": "جامعة بتختثخضبهت",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T15:04:01.880Z",
+"updatedAt": "2023-07-08T15:04:07.924Z",
+"publishedAt": "2023-07-08T15:10:38.073Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 1998,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 38,
+"__component": "program.program",
+"Name": "الإعلام الجديد",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+},
+{
+"id": 39,
+"__component": "program.program",
+"Name": "هندسة الكومبيوتر",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+}
+],
+"Image": {
+"data": null
+},
+"localizations": {
+"data": []
+}
+}
+},
+{
+"id": 20,
+"attributes": {
+"title": "جامعة هههههه",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T15:04:26.563Z",
+"updatedAt": "2023-07-08T15:04:37.269Z",
+"publishedAt": "2023-07-08T15:10:38.073Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 1998,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 40,
+"__component": "program.program",
+"Name": "الإعلام الجديد",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+},
+{
+"id": 41,
+"__component": "program.program",
+"Name": "هندسة الكومبيوتر",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+}
+],
+"Image": {
+"data": null
+},
+"localizations": {
+"data": []
+}
+}
+},
+{
+"id": 21,
+"attributes": {
+"title": "جامعة ققققققق",
+"Description": "جامعة إسطنبول ايدن من أشهر الجامعات الرائدة في مجال التعليم في تركيا، تعتبر من بين أفضل 1000 جامعة حسب التصنيفات الصادرة عن المنظمات الدولية والعالمية.\nتحتوي الجامعة على 12 كلية بمختلف التخصصات ولكافة المراحل الدراسية بكالوريوس وماجستير ودكتوراه.\n\nتأسيس جامعة إسطنبول آيدن\nتأسست جامعة اسطنبول أيدن عام 2007 من قبل مؤسسة الأناضول للتعليم والثقافة (AKEV) تحت شعار \"نحو مستقبل مشرق\" في مدينة إسطنبول الأوروبية.",
+"createdAt": "2023-07-08T15:04:50.594Z",
+"updatedAt": "2023-07-08T15:05:17.527Z",
+"publishedAt": "2023-07-08T15:10:38.073Z",
+"locale": "ar",
+"City": "إسطنبول",
+"Established": 1998,
+"Type": "خاصة",
+"Admission": true,
+"Program": [
+{
+"id": 42,
+"__component": "program.program",
+"Name": "الإعلام الجديد",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+},
+{
+"id": 43,
+"__component": "program.program",
+"Name": "هندسة الكومبيوتر",
+"Language": "الإنجليزية",
+"Type": "بكالوريوس",
+"Price": "$15000"
+}
+],
+"Image": {
+"data": {
+"id": 6,
+"attributes": {
+"name": "Sabancı_University_logo.svg",
+"alternativeText": null,
+"caption": null,
+"width": 139,
+"height": 60,
+"formats": null,
+"hash": "Sabanci_University_logo_14feb9a7a7",
+"ext": ".svg",
+"mime": "image/svg+xml",
+"size": 8.1,
+"url": "/uploads/Sabanci_University_logo_14feb9a7a7.svg",
+"previewUrl": null,
+"provider": "local",
+"provider_metadata": null,
+"createdAt": "2023-07-04T15:00:09.664Z",
+"updatedAt": "2023-07-04T15:00:09.664Z"
+}
+}
+},
+"localizations": {
+"data": []
+}
+}
+}
+],
+"meta": {
+"pagination": {
+"page": 1,
+"pageSize": 25,
+"pageCount": 1,
+"total": 6
+}
+}
+}

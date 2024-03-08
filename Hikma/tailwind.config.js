@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         'hikma-primary': '#ef3637',
         'hikma-secondary': '#263a79'
+      },
+      fontFamily: {
+        montserrat: ['Monsterrat-Arabic', 'regular'],
+        montserratsb: ['Monsterrat-Arabic-SemiBold', 'semibold']
       }
     }
   }

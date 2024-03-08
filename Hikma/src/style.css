@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Monsterrat-Arabic';
+  src: url('./assets/fonts/Montserrat-Arabic-Regular.ttf');
+}
+@font-face {
+  font-family: 'Monsterrat-Arabic-SemiBold';
+  src: url('./assets/fonts/Montserrat-Arabic-SemiBold.ttf');
+}
+
+/* html {
+  background-color: white;
+} */
+* {
+  box-sizing: border-box;
+}
